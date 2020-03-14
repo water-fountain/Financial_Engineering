@@ -66,3 +66,5 @@ Cells(2, 7).Value = Application.WorksheetFunction.Sum(Range(Cells(6, 3), Cells(�
 Next
 End With
 End Sub
+``` 
+未完成編輯
