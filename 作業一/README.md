@@ -13,7 +13,7 @@
 ![按後](https://i.imgur.com/SNkiesw.jpg)
 
 
-程式碼部分公開
+程式碼公開
 ``` 
 Private Sub CommandButton1_Click()
 Dim rf#, d4#, d3#
@@ -65,6 +65,20 @@ Cells(2, 7).Value = Application.WorksheetFunction.Sum(Range(Cells(6, 3), Cells(�
 
 Next
 End With
+End Sub
+```
+``` 
+Private Sub Workbook_Open()
+
+UserForm1.Show
+
+
+End Sub
+``` 
+``` 
+Private Sub 按鈕1_Click()
+UserForm1.Show
+
 End Sub
 ``` 
 未完成編輯
