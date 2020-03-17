@@ -119,4 +119,7 @@ UserForm1.Show
 
 End Sub
 ``` 
-1版:已公開程式碼，完成詳細說明之編輯
+1版:已公開程式碼，完成詳細說明之編輯<br>
+
+發想過程圖:
+![](https://i.imgur.com/5NndJwk.jpg)
