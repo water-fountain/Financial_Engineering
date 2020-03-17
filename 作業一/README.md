@@ -121,7 +121,8 @@ End Sub
 ``` 
 1版:已公開程式碼，完成詳細說明之編輯<br>
 
-發想過程圖:
+發想過程圖:<br>
 ![](https://i.imgur.com/5NndJwk.jpg)
-程式碼解說:
+程式碼解說:<br>
 ![](https://i.imgur.com/VPvStDL.jpg)
+![](https://i.imgur.com/tXBOZ7q.jpg)
