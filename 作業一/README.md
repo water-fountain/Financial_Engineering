@@ -123,3 +123,5 @@ End Sub
 
 發想過程圖:
 ![](https://i.imgur.com/5NndJwk.jpg)
+程式碼解說:
+![](https://i.imgur.com/VPvStDL.jpg)
