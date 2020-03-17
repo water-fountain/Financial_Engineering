@@ -7,13 +7,45 @@
 執行說明:
 -------
 ![下載](https://i.imgur.com/CMth6df.jpg)
+
+點擊download下載 作業1.xlsm 檔<br>
+-----
+
+
 ![啟用編輯](https://i.imgur.com/m1tBU2k.jpg)
+
+開啟作業1檔案後 點擊 啟用編輯 <br>
+-----
+
 ![啟用巨集](https://i.imgur.com/5VIhVCL.jpg)
+
+點擊 啟用巨集 <br>
+-----
+
 ![輸入表單](https://i.imgur.com/JMDmk5p.jpg)
+
+表單會自然跳出 依序輸入表單，按下開始按鈕 <br>
+-----
+
 ![按叉](https://i.imgur.com/00UgeAY.jpg)
+
+表單不會自然關閉，如需關閉表單請手動按叉 <br>
+-----
+
 ![全貌](https://i.imgur.com/pTGlZ4w.jpg)
+
+表單關閉後可見文件全貌，也就是計算結果 <br>
+-----
+
 ![按鈕](https://i.imgur.com/Qm9OcgN.jpg)
+
+如果需要計算其他資料，按下文件上的計算按鈕 <br>
+-----
+
 ![按後](https://i.imgur.com/SNkiesw.jpg)
+
+按下按鈕後表單會跳出 依序輸入表單，按下開始按鈕可開始計算 <br>
+-----
 
 
 程式碼公開
@@ -84,4 +116,4 @@ UserForm1.Show
 
 End Sub
 ``` 
-1版:已公開程式碼，未完成詳細說明之編輯
+1版:已公開程式碼，完成詳細說明之編輯
