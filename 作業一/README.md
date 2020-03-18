@@ -4,7 +4,6 @@
 參考: https://ttc.scu.org.tw/memdca1.htm 製作<br>
 
    以下內容皆本人(倪采靖)所製作<br>
-      維護修課倫理請勿抄襲<br>
       1版上傳於2020.3.15.00:32<br>
       2版(4捨5入版)上傳於2020.3.18.01:32<br>
  
@@ -130,8 +129,11 @@ End Sub
 ``` 
 
 
-發想過程圖:<br>
+發想過程圖(學習歷程):<br>
 ![](https://i.imgur.com/5NndJwk.jpg)<br>
+
+程式流程圖:<br>
+![](https://i.imgur.com/2FVBWYc.jpg)<br>
 
 程式碼解說:<br>
 ![](https://i.imgur.com/VPvStDL.jpg)<br>
