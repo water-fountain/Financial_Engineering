@@ -137,5 +137,6 @@ End Sub
 ![](https://i.imgur.com/VPvStDL.jpg)<br>
 ![](https://i.imgur.com/tXBOZ7q.jpg)<br>
 
+修改部分:![](https://i.imgur.com/ah6rY3r.jpg)<br>
 
-1版:已公開程式碼，完成詳細說明之編輯<br>
+2版:已公開程式碼，完成詳細說明之編輯<br>
