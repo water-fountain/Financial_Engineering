@@ -100,7 +100,7 @@ Selection.NumberFormatLocal = "0.00%"
 
 For i = 1 To 期數月
 
-d1 = (本金 / 期數月) * 10000
+d1 = WorksheetFunction.Round((本金 / 期數月) * 10000
 d4 = (本金 * (期數月 - i + 1) / (期數月)) * 利率月 * 10000
 Cells(5 + i, 1) = i
 Cells(2, 5) = d1
