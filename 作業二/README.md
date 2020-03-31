@@ -1,5 +1,5 @@
 程式碼:
-'''
+``` 
 Private Sub CommandButton1_Click()
 
 Dim 合約價格#, 複利期#, d3#
@@ -95,4 +95,4 @@ Private Sub Label1_Click()
 
 End Sub
 
-'''
+``` 
