@@ -78,9 +78,109 @@ Cells(4, 3) = "到期值利率(年)"
 End With
 End Sub
 
+``` 
+用bootstrap方法計算spot rate，計算的是benchmark one year annual pay bond
+程式碼:
+``` 
+Private Sub CommandButton1_Click()
 
-Private Sub Label1_Click()
+Dim 合約價格#, c1#, d3#
+Dim D1#, D2#, c2#
+Dim YTMONE#, YTMTWO#, YTMTHREE#
+Dim E1#, E2#, E3#
+Dim F1#, F2#, F3#
+Dim G1#, G2#, G3#
 
+With sheet1
+   Range("A1:G10000").Clear
+   
+    Cells(2, "A") = TextBox1.Text
+    Cells(2, "B") = TextBox2.Text / 100
+  
+    Cells(2, "C") = TextBox4.Text / 100
+    Cells(2, "D") = TextBox5.Text / 100
+  
+Range("B2").Select
+Selection.NumberFormatLocal = "0.00%"
+
+Range("C2").Select
+Selection.NumberFormatLocal = "0.00%"
+
+Range("D2").Select
+Selection.NumberFormatLocal = "0.00%"
+
+合約價格 = Cells(2, 1)
+YTMONE = Cells(2, 2)
+YTMTWO = Cells(2, 3)
+YTMTHREE = Cells(2, 4)
+
+
+'第一年YTM = 第一年SPOTRATE
+
+D2 = (合約價格 * YTMTWO) / (1 + YTMTWO) + (((合約價格 * YTMTWO) + 合約價格) / ((1 + YTMTWO) ^ 2))
+D1 = (合約價格 * YTMTWO) / (1 + YTMONE)
+
+Cells(3, 1) = D2
+Cells(3, 2) = D1
+c2 = Cells(3, 1)
+c1 = Cells(3, 2)
+
+
+d3 = ((合約價格 * YTMTWO) + 合約價格) / (c2 - c1)
+Cells(3, 3) = d3
+
+Cells(3, 1).Font.ColorIndex = 2
+Cells(3, 2).Font.ColorIndex = 2
+Cells(3, 3).Font.ColorIndex = 2
+
+Range("C4").Select
+ActiveCell.FormulaR1C1 = "=SQRT(R[-1]C)-1"
+Selection.NumberFormatLocal = "0.0000%"
+
+'3
+
+E3 = Cells(4, 3)
+ 
+E1 = ((合約價格 * YTMTHREE) / (1 + YTMTHREE)) + ((合約價格 * YTMTHREE) / ((1 + YTMTHREE) ^ 2)) + (((合約價格 * YTMTHREE) + 合約價格) / ((1 + YTMTHREE) ^ 3))
+
+E2 = ((合約價格 * YTMTHREE) / (1 + YTMONE)) + ((合約價格 * YTMTHREE) / (1 + E3) ^ 2)
+
+Cells(5, 1) = E1
+Cells(5, 2) = E2
+
+F1 = Cells(5, 1)
+F2 = Cells(5, 2)
+
+F3 = (合約價格 * (1 + YTMTHREE)) / (F1 - F2)
+Cells(5, 4) = F3
+
+G3 = F3 ^ (1 / 3)
+Cells(5, 5) = G3
+
+
+Range("D4").Select
+ActiveCell.FormulaR1C1 = "=R[1]C[1]-1"
+Selection.NumberFormatLocal = "0.0000%"
+
+Cells(5, 1).Font.ColorIndex = 2
+Cells(5, 2).Font.ColorIndex = 2
+Cells(5, 3).Font.ColorIndex = 2
+Cells(5, 4).Font.ColorIndex = 2
+Cells(5, 5).Font.ColorIndex = 2
+
+Cells(4, 2) = YTMONE
+
+Cells(4, 1) = "每年SpotRate"
+Cells(1, 1) = "合約價格"
+Cells(1, 2) = "第1年YTM"
+Cells(1, 3) = "第2年YTM"
+Cells(1, 4) = "第3年YTM"
+Range("B4").Select
+
+Selection.NumberFormatLocal = "0.0000%"
+
+End With
 End Sub
 
 ``` 
+
