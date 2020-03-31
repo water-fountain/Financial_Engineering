@@ -183,4 +183,46 @@ End With
 End Sub
 
 ``` 
+forward rate程式碼:
+``` 
+Private Sub CommandButton1_Click()
 
+Dim 合約價格#, 複利期#, d3#
+Dim d1#, ra#, rb#
+Dim 售價#, 到期年#, f1#
+Dim YTM#, 到#, 複#
+
+With sheet1
+
+   Range("A1:G10000").Clear
+   
+    Cells(2, "A") = TextBox1.Text / 100
+    Cells(2, "B") = TextBox2.Text / 100
+   
+  
+ra = Cells(2, 1)
+rb = Cells(2, 2)
+
+
+d1 = (1 + ra)
+d3 = (1 + rb) ^ 2
+
+
+f1 = d3 / d1 - 1
+
+Cells(2, 3) = f1
+
+
+
+    Range("A2:C2").Select
+    Selection.Style = "Percent"
+
+
+
+
+
+
+End With
+
+End Sub
+``` 
