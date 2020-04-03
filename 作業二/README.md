@@ -6,7 +6,11 @@
 關於spot rate的內容仍不太了解，不確定該做哪種債券的spot RATE<br>
 如果是美國公債的話就跟一般債券稍有不同了。<br>
 
-
+4/3後記:上完課後更加理解老師的意思了，為了更方便操作製作了excel表格式的總計算器<br>
+操作說明如下:<br>
+https://i.imgur.com/YXDXPzY.jpg
+https://i.imgur.com/ULLI8ug.jpg
+https://i.imgur.com/AWcJEwl.jpg
 
 程式碼:
 ``` 
