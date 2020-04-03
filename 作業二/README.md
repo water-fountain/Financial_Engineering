@@ -1,16 +1,18 @@
-4/1 02:19 未完成操作說明<br>
-
-
-
 學習歷程:在算ytm時一直做不出正確答案，後來發現是儲存格的小數點位數不夠<br>
 關於spot rate的內容仍不太了解，不確定該做哪種債券的spot RATE<br>
 如果是美國公債的話就跟一般債券稍有不同了。<br>
 
 4/3後記:上完課後更加理解老師的意思了，為了更方便操作製作了excel表格式的總計算器<br>
 操作說明如下:<br>
-https://i.imgur.com/YXDXPzY.jpg
-https://i.imgur.com/ULLI8ug.jpg
-https://i.imgur.com/AWcJEwl.jpg
+第一個工作表供使用者輸入黃色格子:面額、價格、利率、到期時間、一年計息幾次(已固定為2次)<br>
+![](https://i.imgur.com/YXDXPzY.jpg)
+
+第二個工作表供使用者輸入黃色格子:各期ytm(年化)<br>
+年化ytm=半年期ytm*2<br>
+![](https://i.imgur.com/ULLI8ug.jpg)
+
+第二個工作表供使用者自行輸入黃色格子:spot rate，來計算fordward rate<br>
+![](https://i.imgur.com/AWcJEwl.jpg)
 
 程式碼:
 ``` 
