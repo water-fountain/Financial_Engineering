@@ -1,1 +1,2 @@
-先這樣等等改
+學習歷程:
+![](https://i.imgur.com/aLy3PAc.jpg)
