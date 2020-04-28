@@ -1,3 +1,10 @@
+學習歷程:</bs>
+
+![](https://i.imgur.com/XZuKtph.jpg) </bs>
+
+
+
+
 以下為bsformula非正式作業 的程式碼:</bs>
 ```
 Private Sub 按鈕1_Click()
