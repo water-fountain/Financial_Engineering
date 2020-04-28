@@ -2,50 +2,100 @@
 
 ![](https://i.imgur.com/XZuKtph.jpg) </bs>
 
+計算結果:</bs>
+![](https://i.imgur.com/L3Moua2.jpg) </bs>
 
-
-
-以下為bsformula非正式作業 的程式碼:</bs>
+以下為作業四的程式碼:</bs>
 ```
 Private Sub 按鈕1_Click()
 
 Dim d1#, d2#, Nd1#, Nd2#
-Dim rf#, Std#, Tt#
-Dim callvalue#, implicedvalue#
-Dim r%, us#, ls#, s%, k%
+Dim rf#, Std#, T#
+Dim ca#, im#, dd#
+Dim r%, sigma#, ls#, S%, K%
+Dim fre#, div#, kk#, D#
+Dim Ndd1#, Ndd2#
 With sheet1
-k = Cells(2, 1)
-rf = Cells(2, 2)
 
-Std = Cells(2, 3)
-Tt = Cells(2, 4) / 250
-us = Cells(5, 2)
-ls = Cells(6, 2)
+Range("a6:b300").Clear
 
-Range("a8:c300").Clear
-Cells(8, 1) = "標的物價格"
-Cells(8, 2) = "理論價值"
-Cells(8, 3) = "內含價值"
-Cells(8, 4) = "Delta值"
+'S為現價currently price，年化波動度σ為sigma，T為年，r為利率，K為履約價格exercise price，fre一年幾次股利，div一次發多少
 
-Cells(8, 1).Interior.ColorIndex = 35
-Cells(8, 2).Interior.ColorIndex = 35
-Cells(8, 3).Interior.ColorIndex = 35
+S = Cells(2, 1)
+r = Cells(2, 2)
+sigma = Cells(2, 3)
+T = Cells(2, 4)
+kk = Cells(2, 5)
+fre = Cells(2, 6)
+div = Cells(2, 7)
 
 
-For s = ls To us
-d1 = CCur(Log(CCur(s) / CCur(k)) + CCur(CCur(rf) + CCur(0.5) * Std ^ 2) * Tt) / CCur(Std * Tt ^ 0.5)
-d2 = CCur(Log(CCur(s) / CCur(k)) + CCur(CCur(rf) - CCur(0.5) * Std ^ 2) * Tt) / CCur(Std * Tt ^ 0.5)
-Nd1 = Application.WorksheetFunction.NormSDist(d1)
-Nd2 = Application.WorksheetFunction.NormSDist(d2)
-callvalue = s * (Nd1) - k * Exp(-rf * Tt) * (Nd2)
-implicedvalue = Application.Max(0, (s - k))
-Cells(s - ls + 9, 1) = s
-Cells(s - ls + 9, 2) = callvalue
-Cells(s - ls + 9, 3) = implicatedvalue
-Cells(s - ls + 9, 4) = Nd1
+
+Cells(1, 1) = "現價"
+Cells(1, 2) = "無風險利率"
+Cells(1, 3) = "年化波動度"
+Cells(1, 4) = "距到期幾年"
+Cells(1, 5) = "履約價格"
+Cells(1, 6) = "一年幾次股利"
+Cells(1, 7) = "一次發多少"
+Cells(4, 7) = "股利現值"
+
+im = T * fre
+
+ca = 12 / fre
+
+'計算股利現值:
+
+For i = 1 To im
+
+ls = ca * i - 2
+
+
+
+Cells(5 + i, 1) = i
+Cells(5 + i, 2) = ls
+
+
+
+Cells(5, 7).Value = Application.WorksheetFunction.Sum(Range(Cells(6, 3), Cells(6 + im, 3)))
+
 Next
+
+dd = Cells(5, 7)
+
+
+K = Cells(5, 8)
+
+
+
+
 End With
 
 End Sub
+
+
+
+Function BSECall(K, r, sigma, T, S)
+
+d1 = (Log(S / K) + (r + 0.5 * sigma ^ 2) * T) / (sigma * Sqr(T))
+d2 = d1 - sigma * Sqr(T)
+Nd1 = Application.NormSDist(d1)
+Nd2 = Application.NormSDist(d2)
+BSECall = S * Nd1 - Exp(-r * T) * K * Nd2
+
+
+End Function
+
+
+Function BSEPut(K, r, sigma, T, S)
+
+d1 = (Log(S / K) + (r + 0.5 * sigma ^ 2) * T) / (sigma * Sqr(T))
+d2 = d1 - sigma * Sqr(T)
+Ndd1 = Application.NormSDist(-d1)
+Ndd2 = Application.NormSDist(-d2)
+BSEPut = (Exp(-r * T) * K * Ndd2) - S * Ndd1
+
+
+End Function
+
 ```
