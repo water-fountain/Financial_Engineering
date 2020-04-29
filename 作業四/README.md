@@ -1,6 +1,8 @@
 學習歷程:</bs>
 
 ![](https://i.imgur.com/XZuKtph.jpg) </bs>
+流程圖
+![](https://i.im</bs>gur.com/3vz7guI.jpg) </bs>
 
 計算結果:</bs>
 ![](https://i.imgur.com/L3Moua2.jpg) </bs>
