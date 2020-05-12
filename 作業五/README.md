@@ -52,6 +52,9 @@ Public Sub GetValues(ByRef T As Variant, ByRef f As Variant, ByRef Df As Variant
         T(i) = .Cells(i + 3, 5)
         f(i) = .Cells(i + 3, 6 + Instn)
         Df(i) = .Cells(i + 3, 10 + Instn)
+        
+   '此處在後台取得forward rate及df/dt，因hull white公式中需要
+   
     Next i
     End With
 End Sub
@@ -59,10 +62,12 @@ End Sub
 Public Function HW_path(T As Variant, f As Variant, Df As Variant, r0 As Double, a As Double, sigma As Double, N As Long) As Variant
     Dim M As Integer, i As Long, j As Long
     Dim dt As Double
-    M = UBound(T)
+    '以上為定義參數
+    M = UBound(T) 
     dt = T(1) - T(0)
     ReDim theta(0 To M) As Double
     ReDim r(0 To M, 1 To N) As Double
+    '以上為定義上下界
 
     For j = 1 To N
         r(0, j) = r0
@@ -70,12 +75,12 @@ Public Function HW_path(T As Variant, f As Variant, Df As Variant, r0 As Double,
             theta(i) = Df(i) + a * f(i) + sigma ^ 2 / 2 / a * (1 - Exp(-2 * a * i * dt))
             r(i + 1, j) = r(i, j) + (theta(i) - a * r(i, j)) * dt + sigma * Sqr(dt) * rGauss()
             
-
+'公式中hull white圖片上的兩條公式
 
     Range("m11").Select
     ActiveCell(i, 1) = r(i, j)
 
-
+'
             
         Next i
     Next j
@@ -166,7 +171,7 @@ Dim Ndd1#, Ndd2#
 
 End Sub
 
-Function BSECall(K, r, sigma, T, S)
+Function BSECall(K, r, sigma, T, S) 'call price計算function
 
 d1 = (Log(S / K) + (r + 0.5 * sigma ^ 2) * T) / (sigma * Sqr(T))
 d2 = d1 - sigma * Sqr(T)
@@ -178,7 +183,7 @@ BSECall = S * Nd1 - Exp(-r * T) * K * Nd2
 End Function
 
 
-Function BSEPut(K, r, sigma, T, S)
+Function BSEPut(K, r, sigma, T, S) 'put price計算function
 
 d1 = (Log(S / K) + (r + 0.5 * sigma ^ 2) * T) / (sigma * Sqr(T))
 d2 = d1 - sigma * Sqr(T)
@@ -194,7 +199,7 @@ End Function
 
 
 
-Private Function mc(S, u, sg, T, N)
+Private Function mc(S, u, sg, T, N) '股價計算function
 
 cum = 0
 For i = 1 To N
