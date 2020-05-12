@@ -17,9 +17,14 @@
 
 學習歷程:</bs>
 
-![](https://i.imgur.com/XZuKtph.jpg) </bs>
+![](https://i.imgur.com/tkFHT2l.jpg) </bs>
+
+公式:</bs>
+![](https://i.imgur.com/bNULOjP.png) </bs>
+![](https://i.imgur.com/YDn6RvN.jpg) </bs>
+
 流程圖</bs>
-![](https://i.imgur.com/3vz7guI.jpg) </bs>
+![](https://i.imgur.com/gsSIf0z.jpg) </bs>
 
 計算結果:</bs>
 
